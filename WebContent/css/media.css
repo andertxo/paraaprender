@@ -1,0 +1,130 @@
+/****************************************************************************************************/
+/* Se aplican estas reglas si el ancho es menor de 460px (BREAKPOINTS)*/
+@media screen and (max-width:460px) {
+	body {
+		margin: 0;
+	}
+	#head {
+		width: 100%;
+		padding-top: 1%;
+	}
+	#head h1 {
+		color: red;
+		font-size: 1.5em;
+		text-align: center;
+		float: left;
+  		margin-top: -10%;
+  		margin-left: 15%;	
+	}
+	#head #logo {
+		display: none;
+	}
+	#dl-menu { display: inline; }
+	#dsk-menu { display: none; }
+	
+	#home #leer, #home #barra_lateral {
+		width: 70%; 
+		float: none;
+		margin: 0;
+	}
+	#leer h2 {
+		margin: 0 0 2% 2%;		
+	}
+	
+	table.tabla_azul, .tabla_azul tr, .tabla_azul td {
+		font-size: 1em;
+		margin-left: 10%;
+	}
+	.tabla_azul th, .tabla_azul td {
+    	padding: 5px;
+	}
+	.numero{
+		font-size: 2em;
+		line-height: 2em;
+	}
+	
+	#home #barra_lateral{
+		margin-top: 3%;
+		padding-top: 0;
+		background-color: #c0c0c0;
+		margin-bottom: 3%;
+	}
+	#home #barra_lateral li{
+  		margin-bottom: 15px;
+    	border-bottom: 1px solid #000; 	
+	}
+	
+	#foot {
+		padding: 2%;
+		color: white;
+		background-color: #3e3e3e;
+		margin-bottom: 2%;
+	}
+	.copy, #list_paginas {
+		margin: 0;
+		float: none;
+		padding: 0;	
+	}
+	.copy, #list_paginas li a {
+		color: white;
+		background-color: #3e3e3e;	
+	}
+	
+	#list_rrss ul {	padding-left: 10%;	}
+		#list_rrss li {	width: 23%;	}	
+			#list_rrss li {	margin-left: 1%;	}	
+	
+	div#top {
+		display: inline;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 35px;
+		height: 35px;
+	}	
+	
+	/* Cartelera */
+	div#ficha .no_movil{
+		display: none;
+	}
+	div#ficha h2{
+		font-size: 1.4em;
+	}
+	
+	.imagen {
+	  width: 100%;
+	  height: 182px;
+	}
+	
+	#cartelera li {
+	  float: left;
+	  margin-right: 5%;
+	  margin-bottom: 5%;
+	  width: 40%;
+	}
+	#cartelera .pelicula:hover .titulo {
+		display: none;
+	}
+	#cartelera li:nth-child(3n){
+		margin-right: 5%;
+	}#cartelera li:nth-child(2n){
+		margin-right: 0;
+	}
+	
+	div#ficha {
+		position: relative;
+	}
+	.poster {
+		float: none; 
+		width: 40%;
+		height: auto;
+		position: absolute;
+		bottom: 2%;
+		left: 30%;
+	}
+	div#ficha p.valoracion {
+		margin-bottom: 200px;
+	}
+
+		
+}

@@ -1,0 +1,727 @@
+/*  
+	version:	1.0
+	author:		Ieltxu Orue IbaÃ±ez  
+	date:		20150518
+	
+*/
+
+/******************************** 
+		RESET
+	Resetear todos los estilos para cualquier navegador.
+********************************/ 
+/*@import url("reset.css");
+
+/******************************** 
+		CLEARFIX
+********************************/ 
+	.clearfix:before, .clearfix:after { content: ""; display: table; }
+	.clearfix:after { clear: both; }
+	.clearfix { *zoom: 1; }
+
+/******************************** 
+		FONT-FACE
+	http://es.fontriver.com/
+********************************/ 
+@font-face {
+    font-family: BubblegumSans;
+    src: url("../fonts/BubblegumSans-Regular.otf");
+}
+@font-face {
+    font-family: Calligraffitti;
+    src: url("../fonts/Calligraffitti.woff2") format('woff2'),
+    	 url("../fonts/Calligraffitti.ttf") format('truetype');
+}
+
+/*	
+	ETIQUETAS 
+	Dar un estilo general o base a toda la web.
+*/
+h1 {
+	color: green;
+	margin-bottom: 2%;
+	font-family: arial;
+	font-size: 3em;
+	text-align: center;
+}
+h1#titulo {
+	font-family: Calligraffitti;
+	max-width: 100%;
+}
+h2{
+	margin-top: 30px;
+	clear: both;
+}
+
+strong{
+	font-weight: bold;
+}
+
+p {
+	margin-top: 10px;
+	font-family: arial;
+	font-size: 16px;
+	text-align: justify;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+ul, ol{
+	list-style-type: disc;   
+}
+ul h2, ol h2{
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+ul ul, ol ol{
+	margin-left: 25px;
+	list-style-type: circle;   
+}
+li{
+	margin-bottom: 8px;
+}
+
+body {
+	/*background-image: url(http://static3.depositphotos.com/1000451/115/i/950/depositphotos_1153879-35mm-empty-film.jpg);*/
+	margin-top: 0;
+	background-image: url('../img/back.jpg');
+}
+
+header, nav, section, aside, footer{
+	background-color: white;
+}
+
+a{
+	text-decoration: none;  
+}
+a:hover{
+	color: orange;
+}
+
+/* Recomendable para un CSS de impresion 
+	
+	a:after { content: "->" attr(href) "--||"; }
+*/
+
+form input[type="text"]:required:valid{
+	border: 2px solid green;
+}
+form input[type="text"]:focus:required:invalid{
+	border: 2px solid red; 
+}
+
+figcaption{
+	clear: both;	
+}
+
+mark {
+	background-color:  #CCFF00;
+}
+
+canvas{
+	border: 1px solid black;
+}
+
+article{
+	border: 1px solid #013729;
+	padding: 20px;
+	margin-bottom: 25px;
+}
+article h2{
+	color: #C10D57;
+	background-color: #88ABCB;
+	font-size: 25px;
+	padding: 5px 0;
+}
+
+/*
+	ESTILOS REUTILIZABLES
+	Regla con selector por CLASS para usar en todas las paginas.
+*/
+
+.btn_volver{
+	background-color: #DDD;
+}
+
+.encabezado{
+	margin-left: 5%;
+    margin-right: 5%;
+	margin-bottom: 2%;
+	text-align: center;
+	border: 1px dotted green;
+}
+
+.rosa {
+	color: pink;
+}
+.azul {
+	color: blue;
+}
+
+.cartel{
+	float: left;
+	margin-right: 30px;
+	width: 250px;
+	height: auto;
+}
+
+.ficha{
+	float: left;
+	width: 580px;
+	min-height: 360px;
+	margin-bottom: 20px;
+	background-color: white;
+}
+
+.ficha p{
+	font-size: 35px;
+	line-height: 45px;
+}
+
+.ficha span{
+	font-size: 25px;
+	line-height: 30px;
+	color: orange;
+	font-weight: bold;
+}
+
+.ficha .destacado{
+	color: green;
+	font-weight: 600;
+}
+
+.sinopsis{
+	float: left;
+	height: 150px;
+	overflow: scroll;
+	background-color: white;
+	margin-bottom: 30px;
+}
+
+.negro{
+	background: white;
+	color: #0099ff;
+}
+
+.verde{
+	background: green;
+	color: white;
+}
+
+.cnt_article h3{
+	color: #C10D57;
+	text-decoration: underline;
+}
+
+
+/* contenedor para columnas */
+.cnt_cols{
+	width: 100%;
+	border: 1px solid #DDD;
+}
+.col1, .col2 {
+	float: left;
+	width: 49%;
+	min-height: 100px;
+}
+.col1 {
+	border-right: 1px solid #DDD;
+}
+.col2 {
+	padding: 5%;
+	width: 39%;
+}
+
+
+/* Ventana modal */
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+.modalDialog > div {
+	width: 79%;
+	position: relative;
+	margin: 5% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+.close:hover { background: #00d9ff; }
+
+/*******************************
+			LAYOUT
+*******************************/
+#container{
+	max-width: 960px; /* recomendable 960px */
+	min-width: 320px;
+	margin: 0 auto;
+	padding: 0 2%;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	font-family: arial;
+	background-color: white;
+}
+#head{
+	max-width: 960px;
+	width: 900px;
+}
+
+#content{
+	width: 100%;
+}
+	#home #leer {
+		width: 70%;
+		margin-right: 5%;
+	}
+	#home #barra_lateral {
+		width: 20%;
+		padding: 2%
+	}
+#foot{
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/*
+	PAGINAS
+	Una sección por cada pagina de nuestra web.
+*/
+
+
+/*****************
+		HEAD
+******************/
+#head, nav{
+	position: fixed;
+	left: auto;
+	background-color: white;
+	z-index: 100;
+}
+#head{
+	top: 0;
+}
+nav{
+	top: ;
+}
+#content {
+	padding-top: 19%;
+	padding-bottom: 1px;
+}
+
+/*********************
+	MENU PRINCIPAL
+**********************/
+nav * {
+	padding: 0px;
+	margin: 0px;
+}
+nav {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+nav ul, nav ol {
+	list-style: none;
+}
+nav ul ul {
+	margin: 0px;
+}
+nav h2, nav h3 {
+	margin: 0px;
+}
+
+#dl-menu { display:none; }
+
+.menu li a, .menu li h2, .menu li h3 {
+	background-color: black;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 15px;
+	display: block;
+}
+.menu li h2:hover, .menu li h3:hover, .menu li a:hover {
+	background-color: #434343;
+}
+.menu > li {
+	float: left;
+}
+.menu li ul {
+	display: none;
+	position: absolute;
+	min-width: 175px;
+}
+.menu li:hover > ul{
+	display: block;
+}
+.menu li ul li{
+	position: relative;
+}
+.menu li ul li ul{
+	right: -175px;
+	top: 0px;
+}
+
+/* NAV */
+#logo img{
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+
+/*********************
+		FOOTER
+**********************/
+.copy, #list_paginas {
+	float: left;
+}
+#list_paginas li {
+	float: left;	
+	text-decoration: none;
+}
+#list_paginas {
+	list-style: none;
+	margin: 0px;
+	padding-right: 40px;
+}
+
+#foot{
+	display: block;
+	font-size: 1em;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: white;
+}
+#list_paginas li a, .copy{
+	background-color: white;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	padding: 10px 10px;
+	display: block;
+}
+		
+#list_rrss li {
+	float: left;
+	list-style: none outside none;
+	border: none;
+}
+	
+#list_rrss li a {
+	background-color: white;
+	background-image: url("../img/social_icons.png");
+	background-repeat: no-repeat;
+	background-size: auto 96px;
+	border: 0 none;
+	color: white;
+	direction: ltr;
+	display: block;
+	height: 49px;
+	width: 49px;
+	overflow: hidden;
+	text-align: left;
+	text-decoration: none;
+	text-indent: -999em;
+	transition: all 0.2s ease 0s;
+}
+		
+#list_rrss li.facebook a {
+	background-position: 0 -49px;
+}
+#list_rrss li.facebook a:hover {
+	background-position: 0 0;
+}
+
+#list_rrss li.twitter a {
+	background-position: -49px -49px;
+}
+#list_rrss li.twitter a:hover {
+	background-position: -49px 0;
+}
+	
+#list_rrss li.youtube a {
+	background-position: -98px -49px;
+}
+#list_rrss li.youtube a:hover {
+	background-position: -98px -0;
+}
+
+#list_rrss li.instagram a {
+	background-position: -145px -49px;
+}
+#list_rrss li.instagram a:hover {
+	background-position: -145px 0;
+}
+
+div#top {
+	display: none;
+}
+
+
+/*********************
+		HOME
+**********************/
+
+/*	Posicionamiento	*/
+#leer, #barra_lateral {
+	float: left;
+}
+
+/*	Estilo aside	*/
+#barra_lateral h3 {
+	color: #228fb8;
+	font-size: 20px;
+	border-bottom: medium;
+}
+#barra_lateral ul{
+	list-style: none;
+	margin-left: -20px;
+}
+
+/*	Estilo section	*/
+#leer h2 {
+	color: #228fb8;
+	font-size: 1.2em;
+}
+table.tabla_azul, .tabla_azul tr, .tabla_azul td {
+    margin: 0 auto;
+	border: 1px solid grey;
+	font-size: 30px;
+	text-align: center;
+	color: #0099ff;
+	font-family: arial;
+}
+.tabla_azul th, .tabla_azul td {
+    height:50px;
+	padding: 10px;
+}
+.tabla_azul th {
+	color: grey;
+}
+.numero{
+	font-size: 80px;
+	color: #0099CC;
+	font-family: arial;
+	text-align: center;
+	line-height: 80px;
+}
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+}
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+/*********************
+		CARTELERA
+**********************/	
+#cartelera ul {
+	list-style: none;   
+}
+#cartelera li {
+	float: left;
+	margin-right: 5%;
+	margin-bottom: 5%;  
+}
+#cartelera li:nth-child(3n){
+	margin-right: 0;
+}
+
+.pelicula{
+	position: relative;
+}
+.imagen{
+	width: 250px;
+	height: 350px;
+}
+.titulo {
+	position: absolute;
+	bottom: 0px;	
+	width: 240px; 
+	background-color: rgba(255,255,255,0.8);
+	margin: 0px;
+	padding: 0px 5px;
+	min-height: 100px;
+	display: none;
+}
+.titulo h3 {
+	font-size: 1.2em;
+	text-transform: uppercase;
+	text-align: center;
+	color: green;
+	font-weight: bolder;
+}
+.titulo p {
+	font-size: 0.8em;
+	text-transform: capitalize;
+	text-align: left;
+	color: green;
+}
+#cartelera .pelicula:hover .titulo {
+	display: block;
+}
+.titulo > span{
+	text-transform: lowercase;
+}
+
+.poster {
+	float: left;
+	margin-right: 5%;
+	width: 450px;
+	height: auto;
+}
+
+div#ficha h2{
+	text-align: center;
+	font-size: 2em;
+	color: blue;
+	font-weight: bold;
+}
+div#ficha p span {
+	font-weight: bold;
+}
+
+div#ficha p.valoracion {
+	text-align: right;
+	font-size: 1.5em;
+	color: #eec00b;
+}
+div#ficha p.valoracion span{
+	color: black;
+}
+
+
+/* CARTELERA DETALLE */
+#cartelera_detalle  h1{
+	color: blue;
+	text-align: left;
+}
+
+/* TABLA_AVANZADA */
+#tabla_avanzada h1{
+	font-style: italic;
+	color: blue;
+	text-align: left;
+}
+
+#tabla_avanzada table{
+    border: 1px solid black;
+	text-align: left;
+}
+#tabla_avanzada .cursiva {
+	font-size: 13px;
+	font-style: italic;
+}
+#tabla_avanzada .centrado {
+	text-align: center;
+}
+#tabla_avanzada .derecha {
+	text-align: right;
+	font-weight: bold;	
+}
+#tabla_avanzada .izquierda {
+	text-align: left;	
+}
+
+/* FOMULARIO */
+
+#formulario {
+	border: 3px solid #80ab54;
+	margin: 50px 100px;
+	padding: 0 50px;
+}
+
+#formulario input {
+	padding: 5px 10px;
+  	margin: 5px 25px 10px;
+}
+
+#formulario h2 {
+	font-size: 40px;
+	color: #80ab54;
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
+#formulario label {
+	font-size: 20px;
+}
+
+#formulario fieldset {
+	border: 2px groove #80ab54;
+	margin-right: 25px;
+	margin-bottom: 20px;
+}
+#formulario legend {
+	font-weight: bold;	
+	font-size: 30px;
+	color: #80ab54;
+}
+
+
+/* Reglas con selectores por ID */
+
+#dado{
+	width: 20%;
+	height: 20%;
+}
+
+
+

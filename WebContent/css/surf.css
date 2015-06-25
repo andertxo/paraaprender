@@ -1,0 +1,189 @@
+/*   
+	version:  1.0
+	author:   Ieltxu Orue Ibañez
+	date: 	  20150625
+		
+*/
+
+/******************************  
+   RESET    
+*******************************/
+@import url("reset.css");
+
+/******************************** 
+		CLEARFIX
+********************************/ 
+.clearfix:before, .clearfix:after {
+	content: ""; 
+	display: table; 
+}
+.clearfix:after { 
+	clear: both; 
+}
+.clearfix { 
+	*zoom: 1; 
+}
+	
+/****************************** 
+			ETIQUETAS
+*******************************/ 
+body {
+	font-size: 16px;
+}
+h1 {
+	font-size: 5em;
+	color: #357997;
+	text-align: center;
+	font-weight: bold;
+}
+i.fa {
+	font-size: 50px;
+	color: #333;
+	text-align: center;
+	font-weight: bold;
+	display: none;
+}
+
+/****************************** 
+		MAQUETACION
+	-- SurfSearchSpot --
+*******************************/ 
+/* Layauts */
+#container {
+	width: 100%;
+}
+#head, #menu, #content, #foot {
+	width: 960px;
+	margin: 0 auto;
+}
+#wraper-menu {
+	width: 100%;
+	background-color: #1D1A1C;
+	margin-bottom: 2%;
+}
+
+/* colores y tamaños */
+#head {
+	background-color: #E6F1F6;
+	padding: 2% 0;
+}
+
+#menu {	
+	background: #000000;
+}
+	#menu ul {
+		list-style: none;
+		width: 100%;
+	}
+		#menu li{
+			float: left;
+			text-align: center;		
+			color: #FFF;
+			padding: 0.5em 1em;
+			font-size: 1.5em;
+		}
+			#menu li a {
+				text-decoration: none;
+				color: #FFF;
+			}
+		#menu li:hover{
+			background-color: #CCCCCC;
+		}
+
+#content {
+	background-color: #DDDDDD;
+}
+	#content .caja1x1 {
+		width: 24.25%;
+		height: 240px;
+		float: left;
+		margin-right: 1%;
+		background-color: blue;
+	}
+	#content .caja2x1 {
+		width: 49.50%;
+		height: 240px;
+		float: left;
+		margin-right: 1%;
+		background-color: red;
+	}
+	#content .caja1x2 {
+		width: 24.25%;
+		height: 489.594px;
+		float: left;
+		margin-right: 1%;
+		background-color: green;
+	}
+#content #fila1, #fila2, #fila3 {
+	width: 100%;
+	margin-bottom: 1%;
+}
+	#content #fila1 div:last-child, #fila2 > div:last-child, #fila3 div:last-child {
+		margin-right: 0;
+	}
+
+		#box div:first-child, #box div:nth-child(2) {
+			margin-bottom: 1%;
+		}
+		
+		#fila2 > div:last-child{
+			float: none;
+  			margin-left: 75.75%;
+		}
+		
+#foot p {
+	font-size: 1.2em;
+	background-color: #CCCCCC;
+	color: #000000;
+	text-align: center;
+	padding: 3%;
+}
+
+/****************************************************************************************************/
+/* Se aplican estas reglas si el ancho es menor de 460px (BREAKPOINTS)*/
+@media screen and (max-width:460px) {
+	
+	h1 {
+		text-align: left;
+		padding-left: 5%;
+		font-size: 3em;
+	}
+
+	#head, #menu, #content, #foot {
+		width: 100%;
+		margin: 0;
+	}	
+	#wraper-menu {
+		display: none;
+	}
+		
+	#menu li {
+	  padding: 0.3em 0.6em;
+	  font-size: 1.1em;
+	}	
+	
+	#content #fila1, #fila2, #fila3 {
+		margin-bottom: 0;
+	}
+		
+	#content .caja1x1, #content .caja2x1, #content .caja1x2{
+		float: none;
+		width: 100%;
+		height: 250px;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 1%;
+	}
+	#fila2 > div:last-child {
+  		margin-left: 0;
+	}
+	
+	i.fa {
+		display: inline;
+		position: fixed;
+		top: 1%;
+  		right: 5%;
+	}
+	
+}
+

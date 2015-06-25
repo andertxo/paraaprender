@@ -1,0 +1,69 @@
+
+<!doctype html>
+
+<html lang="es">
+
+<head>
+
+  	<base href="/Ejercicio_practico/">
+	
+	<meta charset="utf-8">
+
+	<title>Calcula entradas Cine</title>
+	<meta name="description" content="Ejercicio Practico: Calcular Entrada Cine">
+	<meta name="author" content="Ieltxu Orue Ibañez">
+	
+	<link rel="stylesheet" type="text/css" href="css/cine.css?v=20150618_1.0">
+	
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">	
+
+  	<!--[if lt IE 9]>
+  	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  
+</head>
+
+<body>
+
+	<div id="container">
+		
+		<section id="calcular_entrada">
+			
+			<header>
+				<h1>¡Calcula tu Entrada!</h1>
+			</header>
+			
+			<div id="selectores">
+				<label for="listaDias">Dia:</label>
+				<select id="listaDias" name="listaDias" onchange="calcularEntrada();" >
+					<option value="L">Lunes</option>
+					<option value="M" selected>Martes</option>
+					<option value="X">Miercoles</option>
+					<option value="J">Jueves</option>
+					<option value="V">Viernes</option>
+					<option value="S">Sabado</option>
+					<option value="D">Domingo</option>
+				</select>			
+				
+				<label for="edad">Edad:</label>
+				<input type="text" id="edad" name="edad"
+					   size="1" maxlength="2" value="16"				        
+					   onchange="calcularEntrada();" 
+					   onkeypress="return justNumbers(event);" />				
+			</div><!-- selectores -->
+			
+			<footer>
+				<span>PRECIO </span>
+				<output id="precio" name="precio">2€</output>			
+			</footer>		
+			   
+		</section> <!-- calcular_entrada -->
+		
+		<script src="js/cine.js"></script>	
+	
+	</div>	<!-- container -->
+	
+</body>
+	
+</html>
