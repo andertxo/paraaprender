@@ -7,8 +7,8 @@
 	<meta charset="utf-8">
 
 	<title>SURFSEARCHSPOT</title>
-	<meta name="description" content="Ejercicio Practico: Surf Search Spot">
-	<meta name="author" content="Ieltxu Orue Ibañez">
+	<meta name="description" content="Surf Search Spot">
+	<meta name="author" content="Ander">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	
 	<link rel="stylesheet" type="text/css" href="css/surf.css?v=20150618_1.2">
